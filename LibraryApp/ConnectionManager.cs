@@ -28,7 +28,6 @@ namespace LibraryApp.Connection
             {
                 connectionManager = new ConnectionManager();
             }
-        
             return connectionManager;
 
         }

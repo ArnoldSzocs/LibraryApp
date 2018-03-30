@@ -20,7 +20,7 @@ namespace LibraryApp
             connection.ExecuteQuery(query);
            
         }
-        
+
         public void Delete(User user)
         {
             Delete(user.Id);
@@ -48,14 +48,12 @@ namespace LibraryApp
             while (reader.Read()){
                 User user = new User
                 {
-                    
                     Id = reader.GetInt32(0),
                     Username = reader.GetString(1),
                     Password = reader.GetString(2)
                 };
                 users.Add(user);
             }
-            reader.Close();
             return users;
         }
 
@@ -69,7 +67,6 @@ namespace LibraryApp
                 user.Id = reader.GetInt32(0);
                 user.Username = reader.GetString(1);
                 user.Password = reader.GetString(2);
-                reader.Close();
                 return user;
             }
             throw new EntityNotFoundException();
@@ -85,8 +82,6 @@ namespace LibraryApp
                 user.Id = reader.GetInt32(0);
                 user.Username = reader.GetString(1);
                 user.Password = reader.GetString(2);
-                reader.Close();
-              
                 return user;
             }
             throw new EntityNotFoundException();
